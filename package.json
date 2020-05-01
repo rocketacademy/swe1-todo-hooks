@@ -1,8 +1,16 @@
 {
-  "name": "todo",
+  "name": "todo-hooks",
   "version": "0.1.0",
+  "author": {
+    "name": "Kyler Wong",
+    "email": "me@kylerwong.dev",
+    "url": "https://kylerwong.dev"
+  },
+  "description": "A simple todo app built in React and React hooks",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -11,6 +19,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -30,5 +39,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
