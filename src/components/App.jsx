@@ -7,6 +7,8 @@ import {
   createStyles,
   makeStyles,
   Grid,
+  useTheme,
+  useMediaQuery,
 } from '@material-ui/core'
 import TodoCard from './TodoCard'
 import ScrollToTopButton from './ScrollToTopButton'
@@ -50,6 +52,8 @@ const App = () => {
   // Used to control our create todo modal.
   const classes = useStyles()
   const { setOpenModal, todos } = useContext(StoreContext)
+  const theme = useTheme()
+  const isMobileView = useMediaQuery(theme.breakpoints.only('xs'))
 
   useEffect(() => {
     // Any updates to the backend should come here.
@@ -81,7 +85,7 @@ const App = () => {
         <ScrollToTopButton />
         <Grid container spacing={4}>
           {todos.map((todo) => (
-            <Grid item xs={12} md={4}>
+            <Grid item direction={isMobileView ? 'row' : 'column'}>
               <TodoCard
                 key={todo.id}
                 id={todo.id}
