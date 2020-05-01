@@ -5,6 +5,8 @@ import theme from './theme'
 import { StoreProvider } from './store'
 import App from './components/App'
 
+document.title = 'Todo App'
+
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <StoreProvider>

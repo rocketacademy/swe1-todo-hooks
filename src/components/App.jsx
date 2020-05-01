@@ -15,23 +15,24 @@ import StoreContext from '../store'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
+    toolbar: theme.mixins.toolbar,
     root: {
       flexGrow: 1,
+      marginLeft: theme.spacing(4),
+      marginRight: theme.spacing(4),
     },
     appBar: {
       boxShadow: 'none',
-      paddingLeft: theme.spacing(0),
-      paddingRight: theme.spacing(0),
+      paddingLeft: theme.spacing(4),
+      paddingRight: theme.spacing(4),
     },
     title: {
       flexGrow: 1,
-      marginTop: theme.spacing(3),
-      marginBottom: theme.spacing(3),
-      marginLeft: theme.spacing(2),
-      marginRight: theme.spacing(2),
+      marginTop: theme.spacing(4),
+      marginBottom: theme.spacing(4),
     },
     body: {
-      margin: theme.spacing(3),
+      margin: theme.spacing(2),
     },
   }),
 )
@@ -64,9 +65,9 @@ const App = () => {
             </Button>
           </Toolbar>
         </AppBar>
-        <Toolbar />
+        <div className={classes.toolbar} />
         <ScrollToTopButton />
-        <Grid className={classes.body} container spacing={4}>
+        <Grid className={classes.body} container spacing={4} dense>
           {todos.map((todo) => (
             <Grid item>
               <TodoCard

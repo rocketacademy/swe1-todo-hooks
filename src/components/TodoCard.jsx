@@ -18,7 +18,7 @@ const useStyles = makeStyles(() =>
       width: 345,
     },
     cardContent: {
-      height: 150,
+      minHeight: 150,
     },
   }),
 )
