@@ -16,9 +16,7 @@ const useStyles = makeStyles(() =>
     root: {
       opacity: (props) => (props.done ? 0.35 : 1),
       width: 345,
-    },
-    cardContent: {
-      minHeight: 150,
+      maxWidth: '100%',
     },
   }),
 )
@@ -46,7 +44,7 @@ export default function TodoCard({ id, title, body, done }) {
 
   return (
     <Card className={classes.root}>
-      <CardContent className={classes.cardContent}>
+      <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {title}
         </Typography>
